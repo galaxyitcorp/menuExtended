@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * HubCo_MenuExtended extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       HubCo
+ * @package        HubCo_MenuExtended
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<widgets>
+    <menuextended_menu_view type="hubco_menuextended/menu_widget_view" translate="name description" module="hubco_menuextended">
+        <name>Menu view</name>
+        <description>Menu view widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <menu_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Menu</label>
+                <type>label</type>
+                <helper_block>
+                    <type>hubco_menuextended/adminhtml_menu_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Menu</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>120</sort_order>
+            </menu_id>
+        </parameters>
+    </menuextended_menu_view>
+    <menuextended_menu_link type="hubco_menuextended/menu_widget_link" translate="name description" module="hubco_menuextended">
+        <name>Menu link</name>
+        <description>Menu link widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <menu_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Menu</label>
+                <type>label</type>
+                <helper_block>
+                    <type>hubco_menuextended/adminhtml_menu_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Menu</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>130</sort_order>
+            </menu_id>
+        </parameters>
+    </menuextended_menu_link>
+</widgets>

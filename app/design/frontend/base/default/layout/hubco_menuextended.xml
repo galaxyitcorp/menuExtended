@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * HubCo_MenuExtended extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       HubCo
+ * @package        HubCo_MenuExtended
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<layout>
+    
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="hubco_menuextended"><name>menu_comments</name><path>hubco_menuextended/menu_customer_comment</path><label>Menu Comments</label></action>
+        </reference>
+    </customer_account>
+    <hubco_menuextended_menu_index translate="label" module="hubco_menuextended">
+        <label>Menu list</label>
+        <update handle="page_two_columns_left" />
+        <reference name="content">
+            <block type="hubco_menuextended/menu_list" name="menu_list" template="hubco_menuextended/menu/list.phtml" />
+        </reference>
+    </hubco_menuextended_menu_index>
+    <hubco_menuextended_menu_view translate="label" module="hubco_menuextended">
+        <label>Menu view page</label>
+        <update handle="page_two_columns_left" />
+        <reference name="content">
+            <block type="hubco_menuextended/menu_view" name="menu_view" template="hubco_menuextended/menu/view.phtml" />
+            <block type="hubco_menuextended/menu_comment_list" name="menu.comments_list" as="menu_comment_list" template="hubco_menuextended/menu/comment/list.phtml">
+                <block type="hubco_menuextended/menu_comment_form" name="comment_form" as="comment_form" template="hubco_menuextended/menu/comment/form.phtml" />
+            </block>
+        </reference>
+    </hubco_menuextended_menu_view>
+    <hubco_menuextended_menu_rss translate="label" module="hubco_menuextended">
+        <label>Menu rss feed</label>
+        <block type="hubco_menuextended/menu_rss" output="toHtml" name="hubco_menuextended.menu.rss" />
+    </hubco_menuextended_menu_rss>
+    <rss_index_index>
+        <reference name="content">
+            <block type="hubco_menuextended/rss" name="menuextended.rss" template="hubco_menuextended/rss.phtml">
+                <action method="addFeed" ifconfig="hubco_menuextended/menu/rss" translate="label" module="hubco_menuextended">
+                    <label>Menu</label>
+                    <url helper="hubco_menuextended/menu/getRssUrl" />
+                </action>
+            </block>
+        </reference>
+    </rss_index_index>
+    <hubco_menuextended_menu_customer_comment_index translate="label" module="hubco_menuextended">
+        <label>My Menu comments</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="hubco_menuextended/menu_customer_comment_list" name="customer_menu_comments" template="hubco_menuextended/menu/customer/comment/list.phtml"/>
+        </reference>
+    </hubco_menuextended_menu_customer_comment_index>
+    <hubco_menuextended_menu_customer_comment_view translate="label" module="hubco_menuextended">
+        <label>My Menu comment view</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="hubco_menuextended/menu_customer_comment_view" name="customer_menu_comment" template="hubco_menuextended/menu/customer/comment/view.phtml"/>
+        </reference>
+    </hubco_menuextended_menu_customer_comment_view>
+</layout>

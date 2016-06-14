@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * HubCo_MenuExtended extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       HubCo
+ * @package        HubCo_MenuExtended
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <hubco_menuextended translate="title" module="hubco_menuextended">
+                                        <title>MenuExtended</title>
+                                    </hubco_menuextended>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <hubco_menuextended translate="title" module="hubco_menuextended">
+                        <title>Menu</title>
+                        <children>
+                            <menu translate="title" module="hubco_menuextended">
+                                <title>Menu</title>
+                                <sort_order>0</sort_order>
+                            </menu>
+                            <menu_comments translate="title" module="hubco_menuextended">
+                                <title>Manage Menu Comments</title>
+                                <sort_order>5</sort_order>
+                            </menu_comments>
+                        </children>
+                    </hubco_menuextended>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <hubco_menuextended translate="title" module="hubco_menuextended">
+            <title>Menu</title>
+            <sort_order>65</sort_order>
+            <children>
+                <menu translate="title" module="hubco_menuextended">
+                    <title>Menu</title>
+                    <action>adminhtml/menuextended_menu</action>
+                    <sort_order>0</sort_order>
+                </menu>
+                <menu_comments translate="title" module="hubco_menuextended">
+                    <title>Manage Menu Comments</title>
+                    <action>adminhtml/menuextended_menu_comment</action>
+                    <sort_order>4</sort_order>
+                </menu_comments>
+            </children>
+        </hubco_menuextended>
+    </menu>
+</config>

@@ -1,0 +1,47 @@
+<?php 
+/**
+ * HubCo_MenuExtended extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       HubCo
+ * @package        HubCo_MenuExtended
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Menu list template
+ *
+ * @category    HubCo
+ * @package     HubCo_MenuExtended
+ * @author      Ultimate Module Creator
+ */
+?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php $_menus = $this->getMenus(); ?>
+<div class="page-title menu-title">
+    <?php if (Mage::helper('hubco_menuextended/menu')->isRssEnabled()) : ?>
+        <a href="<?php echo Mage::helper('hubco_menuextended/menu')->getRssUrl();?>" class="link-rss"><?php echo Mage::helper('hubco_menuextended')->__('Subscribe to RSS Feed')?></a>
+    <?php endif;?>
+    <h1><?php echo Mage::helper('hubco_menuextended')->__('Menu') ?></h1>
+</div>
+<?php if ($_menus->getSize() > 0) :?>
+    <?php echo $this->getPagerHtml(); ?>
+    <div class="menu-list-container">
+    <?php foreach ($_menus as $_menu) : ?>
+        <div class="menu-list-item">
+            <a href="<?php echo $_menu->getMenuUrl()?>">
+                <?php echo $_menu->getMenuName();?>
+            </a><br />
+        </div>
+    <?php endforeach;?>
+    </div>
+    <?php echo $this->getPagerHtml(); ?>
+<?php else : ?>
+    <?php echo Mage::helper('hubco_menuextended')->__('There are no menu at this moment');?>
+<?php endif;?>

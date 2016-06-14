@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * HubCo_MenuExtended extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       HubCo
+ * @package        HubCo_MenuExtended
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <HubCo_MenuExtended>
+            <version>1.0.0</version>
+        </HubCo_MenuExtended>
+    </modules>
+    <global>
+        <resources>
+            <hubco_menuextended_setup>
+                <setup>
+                    <module>HubCo_MenuExtended</module>
+                    <class>HubCo_MenuExtended_Model_Resource_Setup</class>
+                </setup>
+            </hubco_menuextended_setup>
+        </resources>
+        <blocks>
+            <hubco_menuextended>
+                <class>HubCo_MenuExtended_Block</class>
+            </hubco_menuextended>
+        </blocks>
+        <helpers>
+            <hubco_menuextended>
+                <class>HubCo_MenuExtended_Helper</class>
+            </hubco_menuextended>
+        </helpers>
+        <models>
+            <hubco_menuextended>
+                <class>HubCo_MenuExtended_Model</class>
+                <resourceModel>hubco_menuextended_resource</resourceModel>
+            </hubco_menuextended>
+            <hubco_menuextended_resource>
+                <class>HubCo_MenuExtended_Model_Resource</class>
+                <entities>
+                    <menu>
+                        <table>hubco_menuextended_menu</table>
+                    </menu>
+                    <menu_store>
+                        <table>hubco_menuextended_menu_store</table>
+                    </menu_store>
+                    <menu_comment>
+                        <table>hubco_menuextended_menu_comment</table>
+                    </menu_comment>
+                    <menu_comment_store>
+                        <table>hubco_menuextended_menu_comment_store</table>
+                    </menu_comment_store>
+                </entities>
+            </hubco_menuextended_resource>
+        </models>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <hubco_menuextended>
+                        <class>HubCo_MenuExtended_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </hubco_menuextended>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <hubco_menuextended>
+                    <file>hubco_menuextended.xml</file>
+                </hubco_menuextended>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <HubCo_MenuExtended>
+                    <files>
+                        <default>HubCo_MenuExtended.csv</default>
+                    </files>
+                </HubCo_MenuExtended>
+            </modules>
+        </translate>
+        <global_search>
+            <menu>
+                <class>hubco_menuextended/adminhtml_search_menu</class>
+                <acl>hubco_menuextended</acl>
+            </menu>
+        </global_search>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <HubCo_MenuExtended before="Mage_Adminhtml">HubCo_MenuExtended_Adminhtml</HubCo_MenuExtended>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <hubco_menuextended>
+                <use>standard</use>
+                <args>
+                    <module>HubCo_MenuExtended</module>
+                    <frontName>hubco_menuextended</frontName>
+                </args>
+            </hubco_menuextended>
+        </routers>
+        <layout>
+            <updates>
+                <hubco_menuextended>
+                    <file>hubco_menuextended.xml</file>
+                </hubco_menuextended>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <HubCo_MenuExtended>
+                    <files>
+                        <default>HubCo_MenuExtended.csv</default>
+                    </files>
+                </HubCo_MenuExtended>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <hubco_menuextended>
+            <menu>
+                <breadcrumbs>1</breadcrumbs>
+                <allow_comment>1</allow_comment>
+                <rss>1</rss>
+                <meta_title>Menu</meta_title>
+            </menu>
+        </hubco_menuextended>
+    </default>
+</config>

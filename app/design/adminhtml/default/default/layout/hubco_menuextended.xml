@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * HubCo_MenuExtended extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       HubCo
+ * @package        HubCo_MenuExtended
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+    <adminhtml_menuextended_menu_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>hubco_menuextended/menu</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="hubco_menuextended/adminhtml_menu" name="menu" />
+
+        </reference>
+    </adminhtml_menuextended_menu_index>
+    <adminhtml_menuextended_menu_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="hubco_menuextended/adminhtml_menu_grid" name="menu_grid"/>
+        </block>
+    </adminhtml_menuextended_menu_grid>
+    <!-- Menu add/edit action -->
+    <adminhtml_menuextended_menu_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>hubco_menuextended/menu</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="hubco_menuextended/adminhtml_menu_edit" name="menu_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="hubco_menuextended/adminhtml_menu_edit_tabs" name="menu_tabs"></block>
+        </reference>
+    </adminhtml_menuextended_menu_edit>
+
+    <adminhtml_menuextended_menu_comment_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>hubco_menuextended/menu_comment</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="hubco_menuextended/adminhtml_menu_comment" name="menu_comment_grid"/>
+        </reference>
+    </adminhtml_menuextended_menu_comment_index>
+    <adminhtml_menuextended_menu_comment_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="hubco_menuextended/adminhtml_menu_comment_grid" name="menu_comment_grid"/>
+        </block>
+    </adminhtml_menuextended_menu_comment_grid>
+    <adminhtml_menuextended_menu_comment_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>hubco_menuextended/menu_comment</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="hubco_menuextended/adminhtml_menu_comment_edit" name="menu_comment_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="hubco_menuextended/adminhtml_menu_comment_edit_tabs" name="menu_comment_tabs"></block>
+        </reference>
+    </adminhtml_menuextended_menu_comment_edit>
+</layout>

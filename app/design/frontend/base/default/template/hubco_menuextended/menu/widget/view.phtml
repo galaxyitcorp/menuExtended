@@ -1,0 +1,36 @@
+<?php
+/**
+ * HubCo_MenuExtended extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       HubCo
+ * @package        HubCo_MenuExtended
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Menu view widget template
+ *
+ * @category    HubCo
+ * @package     HubCo_MenuExtended
+ * @author      Ultimate Module Creator
+ */
+?>
+<?php $_menu = $this->getCurrentMenu();?>
+<?php if ($_menu) :?>
+    <div class="menu-widget-view">
+        <h3><?php echo $_menu->getMenuName()?></h3>
+        <div>
+            <div class="menu_name-widget">
+                <?php echo Mage::helper('hubco_menuextended')->__('Menu Name');?>:<?php echo $_menu->getMenuName();?>
+            </div>
+
+        </div>
+    </div>
+<?php endif;?>

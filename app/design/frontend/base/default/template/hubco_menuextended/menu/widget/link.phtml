@@ -1,0 +1,30 @@
+<?php
+/**
+ * HubCo_MenuExtended extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       HubCo
+ * @package        HubCo_MenuExtended
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Menu link widget template
+ *
+ * @category    HubCo
+ * @package     HubCo_MenuExtended
+ * @author      Ultimate Module Creator
+ */
+?>
+<?php $_menu = $this->getCurrentMenu();?>
+<?php if ($_menu) :?>
+    <div class="menu-widget-link">
+        <a href="<?php echo $_menu->getMenuUrl()?>"><?php echo $_menu->getMenuName()?></a>
+    </div>
+<?php endif;?>
